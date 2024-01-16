@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipes/recipe.model';
 
 @Component({
@@ -9,10 +9,15 @@ import { Recipe } from '../recipes/recipe.model';
 export class RecipeItemComponent implements OnInit {
 
   @Input() recipe!: Recipe; //the non-null assertion operator ! tells TypeScript that the property will be initialized at runtime
+  @Output() recipeSelected = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(){
+    this.recipeSelected.emit();
   }
 
 }
