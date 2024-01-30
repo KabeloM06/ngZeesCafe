@@ -10,6 +10,7 @@ import { RecipeService } from '../recipes/recipe.service';
 export class RecipeItemComponent implements OnInit {
 
   @Input() recipe!: Recipe; //the non-null assertion operator ! tells TypeScript that the property will be initialized at runtime
+  @Input() index !: number;
   
 
 
